@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://sdgkdvbs4bwh"]
+[gd_scene load_steps=7 format=3 uid="uid://sdgkdvbs4bwh"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_jodvj"]
 [ext_resource type="Texture2D" uid="uid://bfqloby5kk7ek" path="res://assets/sprites/background-day.png" id="2_orqpn"]
 [ext_resource type="Texture2D" uid="uid://xjwg38ldh8io" path="res://assets/sprites/message.png" id="3_7kk8d"]
 [ext_resource type="AudioStream" uid="uid://hsyh56xo1e66" path="res://assets/audio/8Bit Title Screen.mp3" id="4_ik1cb"]
 [ext_resource type="PackedScene" uid="uid://md3g5y4ufxel" path="res://scenes/player.tscn" id="5_42bki"]
+[ext_resource type="PackedScene" uid="uid://bpnx6ld5fdv2m" path="res://scenes/ground.tscn" id="6_umoug"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_jodvj")
@@ -16,7 +17,7 @@ texture = ExtResource("2_orqpn")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Message" type="TextureRect" parent="."]
+[node name="TitleMessage" type="TextureRect" parent="."]
 offset_left = 190.0
 offset_top = 460.0
 offset_right = 890.0
@@ -32,3 +33,6 @@ parameters/looping = true
 
 [node name="Player" parent="." instance=ExtResource("5_42bki")]
 position = Vector2(537, 1137)
+
+[node name="Ground" parent="." instance=ExtResource("6_umoug")]
+position = Vector2(555, 1820)

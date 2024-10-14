@@ -1,5 +1,7 @@
+TextureRect
+Sprite2D
+RigidBody2D
 AnimatedSprite2D
 CharacterBody2D
 AudioStreamPlayer2D
 CenterContainer
-TextureRect
