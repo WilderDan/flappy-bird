@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://md3g5y4ufxel"]
+
+[ext_resource type="Texture2D" uid="uid://tn2r4hy8lo4r" path="res://assets/sprites/bluebird-downflap.png" id="1_c2esb"]
+[ext_resource type="Texture2D" uid="uid://wqmgin57rb5p" path="res://assets/sprites/bluebird-midflap.png" id="2_x5qij"]
+[ext_resource type="Texture2D" uid="uid://bulq7s7fw8r0j" path="res://assets/sprites/bluebird-upflap.png" id="3_6an5e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oyoei"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c2esb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x5qij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6an5e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_oyoei")
+autoplay = "default"

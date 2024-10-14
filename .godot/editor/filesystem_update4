@@ -1,3 +1,4 @@
 res://scenes/main_menu.tscn
 res://scenes/delete-me.gd
 res://scripts/main_menu.gd
+res://scenes/player.tscn

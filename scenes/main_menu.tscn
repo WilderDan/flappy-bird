@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://sdgkdvbs4bwh"]
+[gd_scene load_steps=6 format=3 uid="uid://sdgkdvbs4bwh"]
 
 [ext_resource type="Texture2D" uid="uid://bfqloby5kk7ek" path="res://assets/sprites/background-day.png" id="1_81df5"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ih760"]
 [ext_resource type="Texture2D" uid="uid://xjwg38ldh8io" path="res://assets/sprites/message.png" id="2_83lx5"]
 [ext_resource type="AudioStream" uid="uid://hsyh56xo1e66" path="res://assets/audio/8Bit Title Screen.mp3" id="4_al0fh"]
+[ext_resource type="PackedScene" uid="uid://md3g5y4ufxel" path="res://scenes/player.tscn" id="5_4lhyh"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_ih760")
@@ -28,3 +29,6 @@ stream = ExtResource("4_al0fh")
 volume_db = 1.0
 autoplay = true
 parameters/looping = true
+
+[node name="Player" parent="." instance=ExtResource("5_4lhyh")]
+position = Vector2(537, 1137)
