@@ -1,3 +1,4 @@
 res://scenes/game.tscn
 res://scenes/player.tscn
 res://scenes/ground.tscn
+res://scenes/ground.gdshader
