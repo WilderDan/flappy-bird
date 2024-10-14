@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728913753
+::res://::1728918292
 README.md::TextFile::-1::1728744863::0::1::::<><>::
 ::res://assets/::1728911326
 icon.png::CompressedTexture2D::1703599118467197821::1672921039::1728911326::1::::<><>::
-::res://assets/audio/::1728917253
+::res://assets/audio/::1728917258
 8Bit Title Screen.mp3::AudioStreamMP3::529952038077224349::1728917174::1728917258::1::::<><>::
 die.ogg::AudioStreamOggVorbis::6222160160714938379::1672921039::1728910954::1::::<><>::
 die.wav::AudioStreamWAV::8173444114539786711::1672921039::1728910954::1::::<><>::
@@ -33,7 +33,7 @@ bluebird-downflap.png::CompressedTexture2D::1362096192352254027::1672921039::172
 bluebird-midflap.png::CompressedTexture2D::1577924364454050199::1672921039::1728910954::1::::<><>::
 bluebird-upflap.png::CompressedTexture2D::3813935324149564327::1672921039::1728910954::1::::<><>::
 gameover.png::CompressedTexture2D::1383335460680068945::1672921039::1728910954::1::::<><>::
-message.png::CompressedTexture2D::1634270814202036394::1672921039::1728910954::1::::<><>::
+message.png::CompressedTexture2D::1634270814202036394::1728918387::1728918395::1::::<><>::
 pipe-green.png::CompressedTexture2D::6950981893465377118::1672921039::1728910954::1::::<><>::
 pipe-red.png::CompressedTexture2D::375260260504893797::1672921039::1728910954::1::::<><>::
 redbird-downflap.png::CompressedTexture2D::1506185740633029492::1672921039::1728910954::1::::<><>::
@@ -43,7 +43,8 @@ yellowbird-downflap.png::CompressedTexture2D::3920178657671389942::1672921039::1
 yellowbird-midflap.png::CompressedTexture2D::3872868588650206485::1672921039::1728910954::1::::<><>::
 yellowbird-upflap.png::CompressedTexture2D::3142308297668881084::1672921039::1728910954::1::::<><>::
 ::res://LICENSES/::1728744374
-::res://scenes/::1728917061
-main_menu.tscn::PackedScene::1269974668723984351::1728917061::0::1::::<><>::uid://bfqloby5kk7ek::::res://assets/sprites/background-day.png<>res://scripts/main_menu.gd<>uid://xjwg38ldh8io::::res://assets/sprites/message.png
+::res://scenes/::1728918294
+game.tscn::PackedScene::1269974668723984351::1728918294::0::1::::<><>::res://scripts/main_menu.gd<>uid://bfqloby5kk7ek::::res://assets/sprites/background-day.png<>uid://xjwg38ldh8io::::res://assets/sprites/message.png<>uid://hsyh56xo1e66::::res://assets/audio/8Bit Title Screen.mp3<>uid://md3g5y4ufxel::::res://scenes/player.tscn
+player.tscn::PackedScene::850171661599845879::1728918294::0::1::::<><>::uid://tn2r4hy8lo4r::::res://assets/sprites/bluebird-downflap.png<>uid://wqmgin57rb5p::::res://assets/sprites/bluebird-midflap.png<>uid://bulq7s7fw8r0j::::res://assets/sprites/bluebird-upflap.png
 ::res://scripts/::1728913830
 main_menu.gd::GDScript::-1::1728913830::0::1::::<>Node2D<>::
