@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728911324
+::res://::1728913728
 README.md::TextFile::-1::1728744863::0::1::::<><>::
-::res://assets/::1728911257
+::res://assets/::1728911326
 icon.png::CompressedTexture2D::1703599118467197821::1672921039::1728911326::1::::<><>::
 ::res://assets/audio/::1728910954
 die.ogg::AudioStreamOggVorbis::6222160160714938379::1672921039::1728910954::1::::<><>::
@@ -42,3 +42,7 @@ yellowbird-downflap.png::CompressedTexture2D::3920178657671389942::1672921039::1
 yellowbird-midflap.png::CompressedTexture2D::3872868588650206485::1672921039::1728910954::1::::<><>::
 yellowbird-upflap.png::CompressedTexture2D::3142308297668881084::1672921039::1728910954::1::::<><>::
 ::res://LICENSES/::1728744374
+::res://scenes/::1728913728
+main_menu.tscn::PackedScene::1269974668723984351::1728913753::0::1::::<><>::uid://bfqloby5kk7ek::::res://assets/sprites/background-day.png<>res://scripts/delete-me.gd<>uid://xjwg38ldh8io::::res://assets/sprites/message.png
+::res://scripts/::1728913728
+delete-me.gd::GDScript::-1::1728913711::0::1::::<>Node2D<>::
