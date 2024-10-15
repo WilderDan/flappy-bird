@@ -1,3 +1,4 @@
+CollisionShape2D
 TextureRect
 Sprite2D
 RigidBody2D

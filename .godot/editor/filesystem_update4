@@ -1,4 +1,6 @@
 res://scenes/game.tscn
+res://scenes/ground.gdshader
 res://scenes/player.tscn
 res://scenes/ground.tscn
-res://scenes/ground.gdshader
+res://scripts/player.gd
+res://scripts/game.gd
