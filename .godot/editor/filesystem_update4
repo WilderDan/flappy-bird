@@ -2,5 +2,4 @@ res://scenes/game.tscn
 res://scenes/ground.gdshader
 res://scenes/player.tscn
 res://scenes/ground.tscn
-res://scripts/game.gd
 res://scripts/player.gd

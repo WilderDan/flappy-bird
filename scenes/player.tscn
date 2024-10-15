@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://md3g5y4ufxel"]
+[gd_scene load_steps=9 format=3 uid="uid://md3g5y4ufxel"]
 
 [ext_resource type="Texture2D" uid="uid://tn2r4hy8lo4r" path="res://assets/sprites/bluebird-downflap.png" id="1_c2esb"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l0rpn"]
 [ext_resource type="Texture2D" uid="uid://wqmgin57rb5p" path="res://assets/sprites/bluebird-midflap.png" id="2_x5qij"]
 [ext_resource type="Texture2D" uid="uid://bulq7s7fw8r0j" path="res://assets/sprites/bluebird-upflap.png" id="3_6an5e"]
 [ext_resource type="AudioStream" uid="uid://c4apc5ms74x7k" path="res://assets/audio/hit.ogg" id="5_gtjmf"]
+[ext_resource type="AudioStream" uid="uid://dghka3h18wh03" path="res://assets/audio/swoosh.ogg" id="6_r2mop"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oyoei"]
 animations = [{
@@ -40,3 +41,7 @@ shape = SubResource("CircleShape2D_g0mo7")
 [node name="HitSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_gtjmf")
 volume_db = 2.0
+
+[node name="SwooshSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_r2mop")
+volume_db = 24.0

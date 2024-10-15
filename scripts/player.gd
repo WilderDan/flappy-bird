@@ -2,18 +2,17 @@ extends CharacterBody2D
 
 const JUMP_VELOCITY = -500.0
 
-var is_active = false
+@onready var is_active = false
+var is_falling = false
 
 func _physics_process(delta: float) -> void:
 	if not is_active:
 		return
 		
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("tap"):
+	# Handle jump. (if not falling)
+	if Input.is_action_just_pressed("tap") and not is_falling:
 		velocity.y = JUMP_VELOCITY
 
 	var collision = move_and_collide(velocity * delta)
@@ -21,11 +20,14 @@ func _physics_process(delta: float) -> void:
 		var game_object  = collision.get_collider().name
 		
 		match game_object:
-			"Ground", "Pipes": 
+			"Ground", "Example": 
 				$HitSound.play()
 				# Will try to play sound each function call
 				# which will keep sound starting over and not
 				# hear anything
 				# Below solves this
 				is_active = false
+			"Sky":
+				$SwooshSound.play()
+				is_falling = true
 		

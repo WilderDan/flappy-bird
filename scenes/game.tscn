@@ -6,10 +6,17 @@
 [ext_resource type="AudioStream" uid="uid://hsyh56xo1e66" path="res://assets/audio/8Bit Title Screen.mp3" id="4_ik1cb"]
 [ext_resource type="PackedScene" uid="uid://md3g5y4ufxel" path="res://scenes/player.tscn" id="5_42bki"]
 [ext_resource type="PackedScene" uid="uid://bpnx6ld5fdv2m" path="res://scenes/ground.tscn" id="6_umoug"]
-[ext_resource type="AudioStream" uid="uid://dsdxisq7jtfmf" path="res://assets/audio/hit.wav" id="7_5j8tu"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yo31c"]
+a = Vector2(-3, -44)
+b = Vector2(1085, -44)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_jodvj")
+
+[node name="Player" parent="." instance=ExtResource("5_42bki")]
+z_index = 1
+position = Vector2(537, 1137)
 
 [node name="Background" type="TextureRect" parent="."]
 offset_left = -5.0
@@ -28,19 +35,17 @@ offset_bottom = 1460.0
 texture = ExtResource("3_7kk8d")
 stretch_mode = 4
 
+[node name="Ground" parent="." instance=ExtResource("6_umoug")]
+position = Vector2(555, 1820)
+
+[node name="Sky" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sky"]
+shape = SubResource("SegmentShape2D_yo31c")
+
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_ik1cb")
 volume_db = 1.0
 autoplay = true
 parameters/looping = true
-
-[node name="Player" parent="." instance=ExtResource("5_42bki")]
-z_index = 1
-position = Vector2(537, 1137)
-
-[node name="Ground" parent="." instance=ExtResource("6_umoug")]
-position = Vector2(555, 1820)
-
-[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_5j8tu")
-volume_db = 2.0
