@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1729001186
+::res://::1729006740
 README.md::TextFile::-1::1728744863::0::1::::<><>::
 ::res://assets/::1728911326
 icon.png::CompressedTexture2D::1703599118467197821::1672921039::1728911326::1::::<><>::
@@ -43,11 +43,11 @@ yellowbird-downflap.png::CompressedTexture2D::3920178657671389942::1672921039::1
 yellowbird-midflap.png::CompressedTexture2D::3872868588650206485::1672921039::1728910954::1::::<><>::
 yellowbird-upflap.png::CompressedTexture2D::3142308297668881084::1672921039::1728910954::1::::<><>::
 ::res://LICENSES/::1728744374
-::res://scenes/::1729002073
-game.tscn::PackedScene::1269974668723984351::1729002106::0::1::::<><>::res://scripts/main_menu.gd<>uid://bfqloby5kk7ek::::res://assets/sprites/background-day.png<>uid://xjwg38ldh8io::::res://assets/sprites/message.png<>uid://hsyh56xo1e66::::res://assets/audio/8Bit Title Screen.mp3<>uid://md3g5y4ufxel::::res://scenes/player.tscn<>uid://bpnx6ld5fdv2m::::res://scenes/ground.tscn
-ground.gdshader::Shader::-1::1729002106::0::1::::<><>::
-ground.tscn::PackedScene::3467542683272196702::1729002073::0::1::::<><>::res://scenes/ground.gdshader<>uid://dajbg7ip5i04y::::res://assets/sprites/base.png
-player.tscn::PackedScene::850171661599845879::1729002086::0::1::::<><>::uid://tn2r4hy8lo4r::::res://assets/sprites/bluebird-downflap.png<>res://scripts/player.gd<>uid://wqmgin57rb5p::::res://assets/sprites/bluebird-midflap.png<>uid://bulq7s7fw8r0j::::res://assets/sprites/bluebird-upflap.png
-::res://scripts/::1729002072
-main_menu.gd::GDScript::-1::1728913830::0::1::::<>Node2D<>::
-player.gd::GDScript::-1::1729002086::0::1::::<>CharacterBody2D<>::
+::res://scenes/::1729006731
+game.tscn::PackedScene::1269974668723984351::1729006712::0::1::::<><>::res://scripts/game.gd<>uid://bfqloby5kk7ek::::res://assets/sprites/background-day.png<>uid://xjwg38ldh8io::::res://assets/sprites/message.png<>uid://hsyh56xo1e66::::res://assets/audio/8Bit Title Screen.mp3<>uid://md3g5y4ufxel::::res://scenes/player.tscn<>uid://bpnx6ld5fdv2m::::res://scenes/ground.tscn<>uid://c4apc5ms74x7k::::res://assets/audio/hit.ogg
+ground.gdshader::Shader::-1::1729006731::0::1::::<><>::
+ground.tscn::PackedScene::3467542683272196702::1729006713::0::1::::<><>::res://scenes/ground.gdshader<>uid://dajbg7ip5i04y::::res://assets/sprites/base.png<>uid://c4apc5ms74x7k::::res://assets/audio/hit.ogg
+player.tscn::PackedScene::850171661599845879::1729006713::0::1::::<><>::uid://tn2r4hy8lo4r::::res://assets/sprites/bluebird-downflap.png<>res://scripts/player.gd<>uid://wqmgin57rb5p::::res://assets/sprites/bluebird-midflap.png<>uid://bulq7s7fw8r0j::::res://assets/sprites/bluebird-upflap.png<>uid://c4apc5ms74x7k::::res://assets/audio/hit.ogg
+::res://scripts/::1729006547
+game.gd::GDScript::-1::1729006547::0::1::::<>Node2D<>::
+player.gd::GDScript::-1::1729006411::0::1::::<>CharacterBody2D<>::

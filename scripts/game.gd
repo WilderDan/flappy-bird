@@ -11,6 +11,6 @@ func _input(event):
 				start_game()
 				
 func start_game():
-	state = State.Playing
-	$TitleMessage.hide()
+	state = State.Playing 
+	$TitleMessage.hide() 
 	$Player.is_active = true

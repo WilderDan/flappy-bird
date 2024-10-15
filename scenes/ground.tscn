@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpnx6ld5fdv2m"]
+[gd_scene load_steps=6 format=3 uid="uid://bpnx6ld5fdv2m"]
 
 [ext_resource type="Shader" path="res://scenes/ground.gdshader" id="1_momh7"]
 [ext_resource type="Texture2D" uid="uid://dajbg7ip5i04y" path="res://assets/sprites/base.png" id="1_yymq6"]
+[ext_resource type="AudioStream" uid="uid://c4apc5ms74x7k" path="res://assets/audio/hit.ogg" id="3_kg1td"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ohf5m"]
 shader = ExtResource("1_momh7")
@@ -9,8 +10,8 @@ shader_parameter/Direction = Vector2(1, 0)
 shader_parameter/Speed = 0.15
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_mgok1"]
-a = Vector2(-672, -167)
-b = Vector2(672, -167)
+a = Vector2(-672, -156)
+b = Vector2(672, -156)
 
 [node name="Ground" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -24,3 +25,7 @@ texture = ExtResource("1_yymq6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("SegmentShape2D_mgok1")
+
+[node name="CollisionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kg1td")
+volume_db = 2.0
