@@ -19,7 +19,13 @@ func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		var game_object  = collision.get_collider().name
+		
 		match game_object:
-			"Ground":
+			"Ground", "Pipes": 
 				$HitSound.play()
+				# Will try to play sound each function call
+				# which will keep sound starting over and not
+				# hear anything
+				# Below solves this
+				is_active = false
 		

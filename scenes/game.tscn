@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://hsyh56xo1e66" path="res://assets/audio/8Bit Title Screen.mp3" id="4_ik1cb"]
 [ext_resource type="PackedScene" uid="uid://md3g5y4ufxel" path="res://scenes/player.tscn" id="5_42bki"]
 [ext_resource type="PackedScene" uid="uid://bpnx6ld5fdv2m" path="res://scenes/ground.tscn" id="6_umoug"]
-[ext_resource type="AudioStream" uid="uid://c4apc5ms74x7k" path="res://assets/audio/hit.ogg" id="7_fhr2s"]
+[ext_resource type="AudioStream" uid="uid://dsdxisq7jtfmf" path="res://assets/audio/hit.wav" id="7_5j8tu"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_jodvj")
@@ -42,5 +42,5 @@ position = Vector2(537, 1137)
 position = Vector2(555, 1820)
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_fhr2s")
+stream = ExtResource("7_5j8tu")
 volume_db = 2.0

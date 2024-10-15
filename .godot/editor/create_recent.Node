@@ -1,6 +1,6 @@
+Area2D
 RigidBody2D
 CharacterBody2D
-Area2D
 AudioStreamPlayer2D
 CollisionShape2D
 TextureRect
