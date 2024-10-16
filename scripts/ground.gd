@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+const SPEED = 0.2
+
 @onready var is_paused = false
 @onready var time = 0
 
@@ -14,3 +16,7 @@ func _process(delta: float) -> void:
 func stop():
 	$Sprite2D.material.set_shader_parameter("Speed", 0)
 	is_paused = true
+	
+func start():
+	$Sprite2D.material.set_shader_parameter("Speed", SPEED)
+	is_paused = false

@@ -39,3 +39,10 @@ func _physics_process(delta: float) -> void:
 				$Animation.stop()
 				is_falling = true
 		
+
+func reset(location):
+	position = location
+	rotation = 0
+	is_falling = false
+	$Animation.play()
+	
