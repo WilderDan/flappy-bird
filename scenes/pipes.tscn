@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://qhrm07nrsmjl"]
+
+[ext_resource type="Texture2D" uid="uid://c6bdwkuvnukqg" path="res://assets/sprites/pipe-green.png" id="1_lvh0s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4gur"]
+size = Vector2(49.7143, 319.186)
+
+[node name="Pipes" type="Node2D"]
+
+[node name="TopPipe" type="CharacterBody2D" parent="."]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="TopPipe"]
+position = Vector2(0, -900)
+rotation = -3.14159
+scale = Vector2(3.5, 4.56787)
+texture = ExtResource("1_lvh0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopPipe"]
+position = Vector2(1.00006, -902)
+rotation = -3.14159
+scale = Vector2(3.5, 4.56787)
+shape = SubResource("RectangleShape2D_j4gur")
+
+[node name="BottomPipe" type="CharacterBody2D" parent="."]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="BottomPipe"]
+position = Vector2(0, 900)
+scale = Vector2(3.5, 4.68437)
+texture = ExtResource("1_lvh0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe"]
+position = Vector2(-1.00006, 902.051)
+scale = Vector2(3.5, 4.68437)
+shape = SubResource("RectangleShape2D_j4gur")

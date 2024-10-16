@@ -1,28 +1,28 @@
 extends CharacterBody2D
 
 signal hit_ground
-const JUMP_VELOCITY = -500.0
-const ROTATIONAL_ACCELERATION = 0.025
+const JUMP_VELOCITY = -800.0
+const ROTATIONAL_ACCELERATION = 3
 
-@onready var rotational_velocity = 1
+@onready var rotational_velocity = 0
 @onready var is_active = false
-@onready var is_falling = false
+@onready var is_flew_too_high = false
 
 func _physics_process(delta: float) -> void:
 	if not is_active:
 		return
 		
-	velocity += get_gravity() * delta
+	velocity += 2.5 * get_gravity() * delta
 	if rotation < PI/2:
 		rotation += rotational_velocity * delta
-		rotational_velocity += ROTATIONAL_ACCELERATION
+		rotational_velocity += ROTATIONAL_ACCELERATION * delta
 
-	# Handle jump. (if not falling)
-	if Input.is_action_just_pressed("tap") and not is_falling:
+	# Handle jump.
+	if Input.is_action_just_pressed("tap") and not is_flew_too_high:
 		$FlapSound.play()
 		velocity.y = JUMP_VELOCITY
 		rotation = -1 * PI/4
-		rotational_velocity = 1
+		rotational_velocity = 0
 
 	var collision = move_and_collide(velocity * delta)
 	if collision:
@@ -37,12 +37,12 @@ func _physics_process(delta: float) -> void:
 			"Sky":
 				$SwooshSound.play()
 				$Animation.stop()
-				is_falling = true
+				is_flew_too_high = true
 		
 
 func reset(location):
 	position = location
 	rotation = 0
-	is_falling = false
+	is_flew_too_high = false
 	$Animation.play()
 	
