@@ -6,3 +6,6 @@ res://scripts/player.gd
 res://scripts/game.gd
 res://scripts/ground.gd
 res://scenes/pipes.tscn
+res://scripts/pipe_spawner.gd
+res://scenes/pipe_spawner.tscn
+res://scripts/pipes.gd

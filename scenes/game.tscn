@@ -65,3 +65,4 @@ autoplay = true
 parameters/looping = true
 
 [connection signal="hit_ground" from="Player" to="." method="_on_player_hit_ground"]
+[connection signal="hit_pipe" from="Player" to="." method="_on_player_hit_pipe"]
