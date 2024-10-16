@@ -18,3 +18,4 @@ func start_game():
 func _on_player_hit_ground() -> void:
 	$Ground.stop()
 	$Music.stop()
+	$GameoverMessage.show()
