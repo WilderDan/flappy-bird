@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://md3g5y4ufxel"]
+[gd_scene load_steps=10 format=3 uid="uid://md3g5y4ufxel"]
 
 [ext_resource type="Texture2D" uid="uid://tn2r4hy8lo4r" path="res://assets/sprites/bluebird-downflap.png" id="1_c2esb"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l0rpn"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bulq7s7fw8r0j" path="res://assets/sprites/bluebird-upflap.png" id="3_6an5e"]
 [ext_resource type="AudioStream" uid="uid://c4apc5ms74x7k" path="res://assets/audio/hit.ogg" id="5_gtjmf"]
 [ext_resource type="AudioStream" uid="uid://dghka3h18wh03" path="res://assets/audio/swoosh.ogg" id="6_r2mop"]
+[ext_resource type="AudioStream" uid="uid://bd5x72wwcahtd" path="res://assets/audio/wing.ogg" id="7_e5w6j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oyoei"]
 animations = [{
@@ -34,7 +35,7 @@ script = ExtResource("1_l0rpn")
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_oyoei")
 autoplay = "default"
-frame_progress = 0.016292
+frame_progress = 0.806956
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_g0mo7")
@@ -46,3 +47,6 @@ volume_db = 2.0
 [node name="SwooshSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_r2mop")
 volume_db = 24.0
+
+[node name="FlapSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_e5w6j")
