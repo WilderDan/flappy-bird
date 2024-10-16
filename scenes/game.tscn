@@ -27,7 +27,7 @@ texture = ExtResource("2_orqpn")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="TitleMessage" type="TextureRect" parent="."]
+[node name="ReadyMessage" type="TextureRect" parent="."]
 offset_left = 190.0
 offset_top = 460.0
 offset_right = 890.0
@@ -49,3 +49,5 @@ stream = ExtResource("4_ik1cb")
 volume_db = 1.0
 autoplay = true
 parameters/looping = true
+
+[connection signal="hit_ground" from="Player" to="." method="_on_player_hit_ground"]

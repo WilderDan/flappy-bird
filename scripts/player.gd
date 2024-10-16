@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+signal hit_ground
 const JUMP_VELOCITY = -500.0
 
 @onready var is_active = false
@@ -22,6 +23,7 @@ func _physics_process(delta: float) -> void:
 			"Ground", "Example": 
 				$HitSound.play()
 				$Animation.stop()
+				hit_ground.emit()
 				# Will try to play sound each function call
 				# which will keep sound starting over and not
 				# hear anything

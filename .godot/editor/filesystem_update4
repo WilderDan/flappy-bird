@@ -3,3 +3,5 @@ res://scenes/ground.gdshader
 res://scenes/player.tscn
 res://scenes/ground.tscn
 res://scripts/player.gd
+res://scripts/game.gd
+res://scripts/ground.gd

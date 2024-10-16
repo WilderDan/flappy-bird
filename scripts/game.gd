@@ -12,5 +12,9 @@ func _input(event):
 				
 func start_game():
 	state = State.Playing 
-	$TitleMessage.hide() 
+	$ReadyMessage.hide() 
 	$Player.is_active = true
+	
+func _on_player_hit_ground() -> void:
+	$Ground.stop()
+	$Music.stop()

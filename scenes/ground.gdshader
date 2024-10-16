@@ -2,13 +2,14 @@ shader_type canvas_item;
 
 uniform vec2 Direction = vec2(1.0, 0);
 uniform float Speed = 0.04f;
+uniform float Time;
 
 void vertex() {
 	// Called for every vertex the material is visible on.
 }
 
 void fragment() {
-	COLOR = texture(TEXTURE, UV + (Direction * TIME * Speed));
+	COLOR = texture(TEXTURE, UV + (Direction * Time * Speed));
 }
 
 //void light() {
