@@ -2,8 +2,8 @@ extends Node2D
 
 enum State {Ready, Playing, Pending, Gameover}
 
-@onready var pipe_spawner_scene  = preload("res://scenes/pipe_spawner.tscn")
-var pipe_spawner 
+@onready var piper_handler_scene  = preload("res://scenes/pipe_handler.tscn")
+var piper_handler 
 @onready var state = State.Ready
 @onready var player_start_position = $Player.position
 
@@ -21,11 +21,11 @@ func start_game():
 	$ReadyMessage.hide()
 	$Player.position.x -= 100  
 	$Player.is_active = true
-	pipe_spawner = pipe_spawner_scene.instantiate()
-	pipe_spawner.position = Vector2(1500, 0)
-	pipe_spawner.connect("scored", func(): print("scored"))
-	$Player.connect("hit_pipe", pipe_spawner.stop)
-	add_child(pipe_spawner)
+	piper_handler = piper_handler_scene.instantiate()
+	piper_handler.position = Vector2(1500, 0)
+	piper_handler.connect("scored", func(): print("scored"))
+	$Player.connect("hit_pipe", piper_handler.stop)
+	add_child(piper_handler)
 	state = State.Playing 
 	
 func _on_player_hit_ground() -> void:
@@ -38,7 +38,7 @@ func _on_player_hit_sky() -> void:
 	start_gameover()
 	
 func start_ready():
-	pipe_spawner.queue_free()
+	piper_handler.queue_free()
 	$GameoverMessage.hide()
 	$ReadyMessage.show()
 	$Music.play()
@@ -51,7 +51,7 @@ func start_gameover():
 	$Ground.stop()
 	$Music.stop()
 	$GameoverMessage.show()
-	pipe_spawner.stop()
+	piper_handler.stop()
 	state = State.Pending
 	$GameOverInputDelayTimer.start()
 	
