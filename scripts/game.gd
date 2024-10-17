@@ -33,6 +33,9 @@ func _on_player_hit_ground() -> void:
 func _on_player_hit_pipe() -> void:
 	start_gameover()
 	
+func _on_player_hit_sky() -> void:
+	start_gameover()
+	
 func start_ready():
 	pipe_spawner.queue_free()
 	$GameoverMessage.hide()
