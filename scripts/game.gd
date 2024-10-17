@@ -19,6 +19,7 @@ func _input(event):
 				
 func start_game():
 	$ReadyMessage.hide()
+	$Score.show()
 	$Player.position.x -= 100  
 	$Player.is_active = true
 	piper_handler = piper_handler_scene.instantiate()
@@ -39,6 +40,7 @@ func _on_player_hit_sky() -> void:
 	
 func start_ready():
 	$Score.reset()
+	$ScoreCard.hide()
 	piper_handler.queue_free()
 	$GameoverMessage.hide()
 	$ReadyMessage.show()
@@ -49,10 +51,16 @@ func start_ready():
 	state = State.Ready
 	
 func start_gameover():
+	if state == State.Pending or state == State.Gameover:
+		return
 	$Ground.stop()
 	$Music.stop()
 	$GameoverMessage.show()
 	piper_handler.stop()
+	$Score.update_best()
+	$Score.hide()
+	$ScoreCard.update($Score.score, $Score.best)
+	$ScoreCard.show()
 	state = State.Pending
 	$GameOverInputDelayTimer.start()
 	
@@ -63,15 +71,4 @@ func update_score():
 	if state == State.Gameover or state == State.Pending:
 		return
 		 
-	$Score.update()
-	#var num_digits = count_digits($Score.score)
-	#print(num_digits)
-	#if num_digits > 1:
-		#$Score.position.x = (1080 + (80 * num_digits))/2
-#
-#func count_digits(num):
-	#var count = 0
-	#while num != 0:
-		#num /= 10
-		#count += 1
-	#return count
+	$Score.increment()

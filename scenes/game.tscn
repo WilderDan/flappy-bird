@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://sdgkdvbs4bwh"]
+[gd_scene load_steps=11 format=3 uid="uid://sdgkdvbs4bwh"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_jodvj"]
 [ext_resource type="Texture2D" uid="uid://bfqloby5kk7ek" path="res://assets/sprites/background-day.png" id="2_orqpn"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://md3g5y4ufxel" path="res://scenes/player.tscn" id="5_42bki"]
 [ext_resource type="PackedScene" uid="uid://bpnx6ld5fdv2m" path="res://scenes/ground.tscn" id="6_umoug"]
 [ext_resource type="Texture2D" uid="uid://tydlk4p00mbh" path="res://assets/sprites/gameover.png" id="7_hpulf"]
+[ext_resource type="PackedScene" uid="uid://5gkf4bdjh08a" path="res://scenes/score_card.tscn" id="9_6lh1i"]
 [ext_resource type="PackedScene" uid="uid://cr8t1br2ylt3k" path="res://scenes/score.tscn" id="9_08q13"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_yo31c"]
@@ -43,9 +44,9 @@ stretch_mode = 4
 visible = false
 z_index = 2
 offset_left = 40.0
-offset_top = 556.0
+offset_top = 150.0
 offset_right = 1040.0
-offset_bottom = 806.0
+offset_bottom = 400.0
 texture = ExtResource("7_hpulf")
 stretch_mode = 4
 
@@ -70,8 +71,14 @@ wait_time = 0.5
 one_shot = true
 
 [node name="Score" parent="." instance=ExtResource("9_08q13")]
+visible = false
 z_index = 1
-position = Vector2(540, 120)
+position = Vector2(580, 180)
+
+[node name="ScoreCard" parent="." instance=ExtResource("9_6lh1i")]
+visible = false
+z_index = 2
+position = Vector2(165, 450)
 
 [connection signal="hit_ground" from="Player" to="." method="_on_player_hit_ground"]
 [connection signal="hit_pipe" from="Player" to="." method="_on_player_hit_pipe"]

@@ -12,3 +12,5 @@ res://scripts/pipes.gd
 res://scenes/pipe_handler.tscn
 res://scenes/score.tscn
 res://scripts/score.gd
+res://scripts/score_card.gd
+res://scenes/score_card.tscn

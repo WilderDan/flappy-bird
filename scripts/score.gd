@@ -13,6 +13,7 @@ extends Node2D
 
 var digit_sprites = []
 var score = 0
+var best = 0
 const GAP = 100
 
 func _ready() -> void:
@@ -21,13 +22,23 @@ func _ready() -> void:
 	digit_sprites.append($Digit2)
 	digit_sprites.append($Digit1)
 	
-func update():
-	$Audio.play()
-	score += 1
-	var digits = get_pos_nums(score)
+func set_value(num):
+	$Digit1.hide()
+	$Digit2.hide()
+	$Digit3.hide()
+	score = num
+	display(score)
+	
+func display(num):
+	var digits = get_pos_nums(num)
 	for i in range(len(digits)):
 		digit_sprites[i].texture = get_digit_texture(digits[i])
 		digit_sprites[i].show()
+	
+func increment():
+	$Audio.play()
+	score += 1
+	display(score)
 	update_global_position()
 
 func get_pos_nums(num):
@@ -73,10 +84,8 @@ func get_score():
 
 func update_global_position():
 	var num_digits = count_digits(score)
-	print(num_digits)
 	global_position.x = (1080 + (GAP * (num_digits - 1)))/2
 	
-
 func count_digits(num):
 	if num == 0:
 		return 1
@@ -86,3 +95,6 @@ func count_digits(num):
 		num /= 10
 		count += 1
 	return count
+
+func update_best():
+	best = score if score > best else best

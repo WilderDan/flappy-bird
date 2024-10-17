@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://5gkf4bdjh08a"]
+
+[ext_resource type="Script" path="res://scripts/score_card.gd" id="1_cews8"]
+[ext_resource type="Texture2D" uid="uid://ddtalxv47t8gc" path="res://assets/sprites/score-card.png" id="2_opqy2"]
+[ext_resource type="PackedScene" uid="uid://cr8t1br2ylt3k" path="res://scenes/score.tscn" id="3_uwjsm"]
+
+[node name="ScoreCard" type="Node2D"]
+script = ExtResource("1_cews8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 13.0
+offset_top = -10.0
+offset_right = 747.0
+offset_bottom = 903.0
+texture = ExtResource("2_opqy2")
+
+[node name="CurrentScore" parent="." instance=ExtResource("3_uwjsm")]
+position = Vector2(540, 348)
+
+[node name="BestScore" parent="." instance=ExtResource("3_uwjsm")]
+position = Vector2(540, 662)
