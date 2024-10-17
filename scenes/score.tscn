@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr8t1br2ylt3k"]
+
+[ext_resource type="Script" path="res://scripts/score.gd" id="1_b3df0"]
+[ext_resource type="Texture2D" uid="uid://dxmse0xtiqqp8" path="res://assets/sprites/0.png" id="1_vn6vv"]
+[ext_resource type="AudioStream" uid="uid://d1aw75nvfud7h" path="res://assets/audio/point.ogg" id="3_rxlwf"]
+
+[node name="Score" type="Node2D"]
+script = ExtResource("1_b3df0")
+
+[node name="Digit1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-360, 0)
+scale = Vector2(4, 4)
+texture = ExtResource("1_vn6vv")
+
+[node name="Digit2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-240, 0)
+scale = Vector2(4, 4)
+texture = ExtResource("1_vn6vv")
+
+[node name="Digit3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-120, 0)
+scale = Vector2(4, 4)
+texture = ExtResource("1_vn6vv")
+
+[node name="Digit4" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_vn6vv")
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rxlwf")
+volume_db = 2.0

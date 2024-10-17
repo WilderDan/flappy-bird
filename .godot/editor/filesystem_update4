@@ -10,3 +10,5 @@ res://scripts/pipe_spawner.gd
 res://scenes/pipe_spawner.tscn
 res://scripts/pipes.gd
 res://scenes/pipe_handler.tscn
+res://scenes/score.tscn
+res://scripts/score.gd

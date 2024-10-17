@@ -38,6 +38,7 @@ func _on_player_hit_sky() -> void:
 	start_gameover()
 	
 func start_ready():
+	$Score.reset()
 	piper_handler.queue_free()
 	$GameoverMessage.hide()
 	$ReadyMessage.show()
@@ -61,5 +62,16 @@ func _on_game_over_input_delay_timer_timeout() -> void:
 func update_score():
 	if state == State.Gameover or state == State.Pending:
 		return
-		
-	$ScoreSound.play()
+		 
+	$Score.update()
+	#var num_digits = count_digits($Score.score)
+	#print(num_digits)
+	#if num_digits > 1:
+		#$Score.position.x = (1080 + (80 * num_digits))/2
+#
+#func count_digits(num):
+	#var count = 0
+	#while num != 0:
+		#num /= 10
+		#count += 1
+	#return count
