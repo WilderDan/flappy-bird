@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://qhrm07nrsmjl"]
+[gd_scene load_steps=5 format=3 uid="uid://qhrm07nrsmjl"]
 
 [ext_resource type="Script" path="res://scripts/pipes.gd" id="1_4npkc"]
 [ext_resource type="Texture2D" uid="uid://c6bdwkuvnukqg" path="res://assets/sprites/pipe-green.png" id="1_lvh0s"]
-[ext_resource type="AudioStream" uid="uid://d1aw75nvfud7h" path="res://assets/audio/point.ogg" id="3_qyktr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4gur"]
 size = Vector2(49.7143, 319.186)
@@ -46,10 +45,6 @@ texture = ExtResource("1_lvh0s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreCollider"]
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_l4fwh")
-
-[node name="ScoreSound" type="AudioStreamPlayer2D" parent="ScoreCollider"]
-stream = ExtResource("3_qyktr")
-volume_db = 2.0
 
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]
 [connection signal="body_entered" from="ScoreCollider" to="." method="_on_score_collider_body_entered"]

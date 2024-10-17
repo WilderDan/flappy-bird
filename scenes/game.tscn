@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://sdgkdvbs4bwh"]
+[gd_scene load_steps=10 format=3 uid="uid://sdgkdvbs4bwh"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_jodvj"]
 [ext_resource type="Texture2D" uid="uid://bfqloby5kk7ek" path="res://assets/sprites/background-day.png" id="2_orqpn"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://md3g5y4ufxel" path="res://scenes/player.tscn" id="5_42bki"]
 [ext_resource type="PackedScene" uid="uid://bpnx6ld5fdv2m" path="res://scenes/ground.tscn" id="6_umoug"]
 [ext_resource type="Texture2D" uid="uid://tydlk4p00mbh" path="res://assets/sprites/gameover.png" id="7_hpulf"]
+[ext_resource type="AudioStream" uid="uid://d1aw75nvfud7h" path="res://assets/audio/point.ogg" id="8_o67y0"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_yo31c"]
 a = Vector2(-3, -44)
@@ -67,6 +68,10 @@ parameters/looping = true
 [node name="GameOverInputDelayTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="ScoreSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_o67y0")
+volume_db = 2.0
 
 [connection signal="hit_ground" from="Player" to="." method="_on_player_hit_ground"]
 [connection signal="hit_pipe" from="Player" to="." method="_on_player_hit_pipe"]

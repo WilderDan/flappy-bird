@@ -23,5 +23,4 @@ func _on_score_collider_body_entered(body: Node2D) -> void:
 	pass
 
 func _on_score_collider_body_exited(body: Node2D) -> void:
-	$ScoreCollider/ScoreSound.play()
 	scored.emit()

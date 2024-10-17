@@ -23,7 +23,7 @@ func start_game():
 	$Player.is_active = true
 	piper_handler = piper_handler_scene.instantiate()
 	piper_handler.position = Vector2(1500, 0)
-	piper_handler.connect("scored", func(): print("scored"))
+	piper_handler.connect("scored", update_score)
 	$Player.connect("hit_pipe", piper_handler.stop)
 	add_child(piper_handler)
 	state = State.Playing 
@@ -57,3 +57,9 @@ func start_gameover():
 	
 func _on_game_over_input_delay_timer_timeout() -> void:
 	state = State.Gameover
+
+func update_score():
+	if state == State.Gameover or state == State.Pending:
+		return
+		
+	$ScoreSound.play()
