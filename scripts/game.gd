@@ -2,6 +2,8 @@ extends Node2D
 
 enum State {Ready, Playing, Pending, Gameover}
 
+@onready var background_day = load("res://assets/sprites/background-day.png")
+@onready var background_night = load("res://assets/sprites/background-night.png")
 @onready var piper_handler_scene  = preload("res://scenes/pipe_handler.tscn")
 var piper_handler 
 @onready var state = State.Ready
@@ -19,6 +21,7 @@ func _input(event):
 				
 func start_game():
 	$ReadyMessage.hide()
+	$Prompt.hide()
 	$Score.show()
 	$Player.position.x -= 100  
 	$Player.is_active = true
@@ -39,6 +42,7 @@ func _on_player_hit_sky() -> void:
 	start_gameover()
 	
 func start_ready():
+	$Background.texture = background_day
 	$Score.reset()
 	$ScoreCard.hide()
 	piper_handler.queue_free()
@@ -61,11 +65,13 @@ func start_gameover():
 	$Score.hide()
 	$ScoreCard.update($Score.score, $Score.best)
 	$ScoreCard.show()
+	$Background.texture = background_night
 	state = State.Pending
 	$GameOverInputDelayTimer.start()
 	
 func _on_game_over_input_delay_timer_timeout() -> void:
 	state = State.Gameover
+	$Prompt.show()
 
 func update_score():
 	if state == State.Gameover or state == State.Pending:
