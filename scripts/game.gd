@@ -1,6 +1,6 @@
 extends Node2D
 
-enum State {Ready, Playing, Gameover}
+enum State {Ready, Playing, Pending, Gameover}
 
 @onready var pipe_spawner_scene  = preload("res://scenes/pipe_spawner.tscn")
 var pipe_spawner 
@@ -13,7 +13,9 @@ func _input(event):
 			State.Ready:
 				start_game()
 			State.Gameover:
-				show_ready()
+				start_ready()
+			_:
+				print("Pending")
 				
 func start_game():
 	$ReadyMessage.hide()
@@ -26,20 +28,12 @@ func start_game():
 	state = State.Playing 
 	
 func _on_player_hit_ground() -> void:
-	$Ground.stop()
-	$Music.stop()
-	$GameoverMessage.show()
-	pipe_spawner.stop()
-	state = State.Gameover
+	start_gameover()
 	
 func _on_player_hit_pipe() -> void:
-	$Ground.stop()
-	$Music.stop()
-	$GameoverMessage.show()
-	pipe_spawner.stop()
-	state = State.Gameover
+	start_gameover()
 	
-func show_ready():
+func start_ready():
 	pipe_spawner.queue_free()
 	$GameoverMessage.hide()
 	$ReadyMessage.show()
@@ -48,3 +42,15 @@ func show_ready():
 	$Player.is_active = false
 	$Ground.start()
 	state = State.Ready
+	
+func start_gameover():
+	$Ground.stop()
+	$Music.stop()
+	$GameoverMessage.show()
+	pipe_spawner.stop()
+	state = State.Pending
+	$GameOverInputDelayTimer.start()
+	
+func _on_game_over_input_delay_timer_timeout() -> void:
+	print("gameover")
+	state = State.Gameover

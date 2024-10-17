@@ -64,5 +64,10 @@ volume_db = 1.0
 autoplay = true
 parameters/looping = true
 
+[node name="GameOverInputDelayTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="hit_ground" from="Player" to="." method="_on_player_hit_ground"]
 [connection signal="hit_pipe" from="Player" to="." method="_on_player_hit_pipe"]
+[connection signal="timeout" from="GameOverInputDelayTimer" to="." method="_on_game_over_input_delay_timer_timeout"]
