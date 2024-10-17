@@ -3,7 +3,9 @@ extends CharacterBody2D
 signal hit_ground
 signal hit_pipe
 signal hit_sky
-const JUMP_VELOCITY = -1050.0
+
+const GRAVITY = Vector2(0, 4000)
+const JUMP_VELOCITY = -1200.0
 const ROTATIONAL_ACCELERATION = 3
 
 @onready var rotational_velocity = 0
@@ -14,7 +16,7 @@ func _physics_process(delta: float) -> void:
 	if not is_active:
 		return
 		
-	velocity += 3 * get_gravity() * delta
+	velocity += GRAVITY * delta
 	if rotation < PI/2:
 		rotation += rotational_velocity * delta
 		rotational_velocity += ROTATIONAL_ACCELERATION * delta
