@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = -300
+@export var speed = -500
 @onready var is_moving = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

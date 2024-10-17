@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal hit_ground
 signal hit_pipe
-const JUMP_VELOCITY = -800.0
+const JUMP_VELOCITY = -1050.0
 const ROTATIONAL_ACCELERATION = 3
 
 @onready var rotational_velocity = 0
@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 	if not is_active:
 		return
 		
-	velocity += 2.5 * get_gravity() * delta
+	velocity += 3 * get_gravity() * delta
 	if rotation < PI/2:
 		rotation += rotational_velocity * delta
 		rotational_velocity += ROTATIONAL_ACCELERATION * delta
@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 				$SwooshSound.play()
 				$Animation.stop()
 				is_death_fall = true
-			# Pipes
+			# Pipes -> name changes i.e Pipes, Pipes2, etc.
 			_:
 				hit_pipe.emit()
 				$HitSound.play()

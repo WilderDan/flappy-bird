@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var spawn_time = 1.8
+@export var spawn_time = 1.2
 @onready var pipes  = preload("res://scenes/pipes.tscn")
 @onready var pipe_list = []
 
