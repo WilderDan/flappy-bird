@@ -1,11 +1,11 @@
-Timer
-CharacterBody2D
-Node2D
+AudioStreamPlayer2D
+Area2D
 CollisionShape2D
+CharacterBody2D
+Timer
+Node2D
 Sprite2D
 TextureRect
-AudioStreamPlayer2D
 RigidBody2D
-Area2D
 AnimatedSprite2D
 CenterContainer

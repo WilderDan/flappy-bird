@@ -14,8 +14,8 @@ func _input(event):
 				start_game()
 			State.Gameover:
 				start_ready()
-			_:
-				print("Pending")
+			_: # 'Pending' do nothing. 'Playing' handled by Player script
+				pass
 				
 func start_game():
 	$ReadyMessage.hide()
@@ -23,6 +23,7 @@ func start_game():
 	$Player.is_active = true
 	pipe_spawner = pipe_spawner_scene.instantiate()
 	pipe_spawner.position = Vector2(1500, 0)
+	pipe_spawner.connect("scored", func(): print("scored"))
 	$Player.connect("hit_pipe", pipe_spawner.stop)
 	add_child(pipe_spawner)
 	state = State.Playing 
@@ -55,5 +56,4 @@ func start_gameover():
 	$GameOverInputDelayTimer.start()
 	
 func _on_game_over_input_delay_timer_timeout() -> void:
-	print("gameover")
 	state = State.Gameover
