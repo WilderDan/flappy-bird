@@ -16,7 +16,8 @@ func _input(event):
 				show_ready()
 				
 func start_game():
-	$ReadyMessage.hide() 
+	$ReadyMessage.hide()
+	$Player.position.x -= 100  
 	$Player.is_active = true
 	pipe_spawner = pipe_spawner_scene.instantiate()
 	pipe_spawner.position = Vector2(1500, 0)
